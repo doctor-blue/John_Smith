@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Cream</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password"><u>Forgot password?</u></string>
+    <string name="sign_in"><u>Sign in</u></string>
+    <string name="welcome_back">Welcome\nback</string>
+</resources>

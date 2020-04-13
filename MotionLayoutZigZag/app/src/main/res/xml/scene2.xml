@@ -1,47 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <Transition app:constraintSetStart="@id/start"
-        app:constraintSetEnd="@id/end"
-        app:duration="3000">
-        <OnClick app:clickAction="toggle"
-            app:targetId="@id/image"/>
-        <KeyFrameSet>
-            <KeyPosition app:framePosition="25"
-                app:motionTarget="@id/image"
-                app:percentX="0.2"
-                app:keyPositionType="parentRelative"
-                app:percentY="0.2"/>
-            <KeyPosition app:framePosition="50"
-                app:motionTarget="@id/image"
-                app:percentX="0.8"
-                app:keyPositionType="parentRelative"
-                app:percentY="0.5"/>
-            <KeyPosition app:framePosition="75"
-                app:motionTarget="@id/image"
-                app:percentX="0.2"
-                app:keyPositionType="parentRelative"
-                app:percentY="0.8"/>
-        </KeyFrameSet>
-    </Transition>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ConstraintSet android:id="@+id/start">
-        <Constraint android:id="@+id/image">
-            <Layout android:layout_height="64dp"
-                android:layout_width="64dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-        </Constraint>
-    </ConstraintSet>
-
-    <ConstraintSet android:id="@+id/end">
-        <Constraint android:id="@+id/image">
-            <Layout android:layout_height="64dp"
-                android:layout_width="64dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-        </Constraint>
-    </ConstraintSet>
-</MotionScene>
+</PreferenceScreen>

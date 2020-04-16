@@ -3,38 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".Main2Activity">
- <!--   <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:textSize="25sp"
-        android:id="@+id/txt_user"/>
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-    <TextView
+  <!--  <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        android:id="@+id/txt_num_a"/>-->
-    <TextView
+        android:text="Start Activity"
+        android:id="@+id/btn_new_activity"/>-->
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
+        android:inputType="number"
+        android:id="@+id/edt_num_a"
         android:textSize="20sp"
-        android:id="@+id/txt_num_a"/>
-    <TextView
+        android:textColor="@android:color/black"/>
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
+        android:inputType="number"
+        android:id="@+id/edt_num_b"
         android:textSize="20sp"
-        android:id="@+id/txt_num_b"/>
+        android:textColor="@android:color/black"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Calculate"
-        android:id="@+id/btn_cal"/>
+        android:text="Sum"
+        android:id="@+id/btn_sum"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_sum"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"/>
+
 </LinearLayout>

@@ -1,38 +1,34 @@
 package com.example.kotlincoroutinesexample.async_await
 
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.async
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 import kotlin.system.measureTimeMillis
 
 fun main() {
     runBlocking {
-      val time= measureTimeMillis {
-          val a: Deferred<Int> = async { doSomethingFunny1() }
+        /*  val time= measureTimeMillis {
+              val a= launch { doSomeThingFunny1() }
+              val b= launch { doSomeThingFunny2() }
 
-          val b: Deferred<Int> = async { doSomethingFunny2() }
+              println(a + b)
+          }*/
+        val time = measureTimeMillis {
+            val a:Deferred<Int> = async { doSomeThingFunny1() }
 
-          println(a.await() + b.await())
+            val b:Deferred<Int> = async { doSomeThingFunny2() }
 
-      }
+            println(a.await() + b.await())
+        }
         println("Time = $time")
-
-      /* val time= measureTimeMillis {
-           val a= doSomethingFunny1()
-           val b= doSomethingFunny2()
-           println(a+b)
-       }
-        println("Time = $time")*/
+        GlobalScope
     }
 }
 
-suspend fun doSomethingFunny1(): Int {
+suspend fun doSomeThingFunny1(): Int {
     delay(1000)
     return 10
 }
 
-suspend fun doSomethingFunny2(): Int {
+suspend fun doSomeThingFunny2(): Int {
     delay(1000)
     return 20
 }

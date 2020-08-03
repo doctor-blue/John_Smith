@@ -12,49 +12,41 @@ import com.example.noteapp.R
 import com.example.noteapp.model.Note
 
 class NoteAdapter(
-    private val context:Context,
-    private val onClick:(Note)->Unit,
-    private val onDelete:(Note)->Unit
-) :RecyclerView.Adapter<NoteAdapter.NoteViewHolder>(){
+    private val context: Context,
+    private val onClick: (Note) -> Unit,
+    private val onDelete: (Note) -> Unit
+) : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
+    private var notes: List<Note> = listOf()
 
-    private var notes:List<Note> = listOf()
+    inner class NoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val txtTitle: TextView = itemView.findViewById(R.id.txt_item_title)
+        private val txtDes: TextView = itemView.findViewById(R.id.txt_item_des)
+        private val btnDelete: ImageView = itemView.findViewById(R.id.btn_delete_note)
+        private val layoutItem: ConstraintLayout = itemView.findViewById(R.id.layout_item)
+
+        fun onBind(note: Note) {
+            txtDes.text = note.description
+            txtTitle.text = note.title
+
+            btnDelete.setOnClickListener { onDelete(note) }
+
+            layoutItem.setOnClickListener { onClick(note) }
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
-        val itemView=LayoutInflater.from(context).inflate(R.layout.note_item,parent,false)
+        val itemView = LayoutInflater.from(context).inflate(R.layout.note_item, parent, false)
         return NoteViewHolder(itemView)
     }
 
     override fun getItemCount(): Int = notes.size
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
-        holder.onBind(notes[position],onClick,onDelete)
+        holder.onBind(notes[position])
     }
-    fun setNotes(notes:List<Note>){
-        this.notes=notes
+
+    fun setNotes(notes: List<Note>) {
+        this.notes = notes
         notifyDataSetChanged()
     }
-
-
-    class NoteViewHolder(itemView:View) :RecyclerView.ViewHolder(itemView){
-        private val txtTitle:TextView=itemView.findViewById(R.id.txt_item_title)
-        private val txtDes:TextView =itemView.findViewById(R.id.txt_item_des)
-        private val btnDelete:ImageView=itemView.findViewById(R.id.btn_delete_note)
-        private val layoutItem:ConstraintLayout=itemView.findViewById(R.id.layout_item)
-
-        fun onBind(note:Note, onClick: (Note) -> Unit, onDelete: (Note) -> Unit){
-            txtTitle.text=note.title
-            txtDes.text=note.description
-
-            btnDelete.setOnClickListener {
-                onDelete(note)
-            }
-
-            layoutItem.setOnClickListener {
-                onClick(note)
-            }
-        }
-
-    }
-
-
 }

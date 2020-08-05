@@ -7,12 +7,14 @@
     tools:context=".activities.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_note"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:id="@+id/rv_note"/>
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="50dp"
         android:layout_height="50dp"

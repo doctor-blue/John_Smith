@@ -49,9 +49,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val onItemClick: (Note) -> Unit = {
+        val intent=Intent(this,UpdateNoteActivity::class.java)
+        intent.putExtra("UPDATE_NOTE",it)
+        startActivity(intent)
 
     }
     private val onItemDelete: (Note) -> Unit = {
-
+        noteViewModel.deleteNote(it)
     }
 }

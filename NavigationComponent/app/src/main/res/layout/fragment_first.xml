@@ -12,17 +12,34 @@
         android:layout_height="wrap_content"
         android:text="This is first Fragment"
         android:textColor="#000"
-        android:textSize="30sp"/>
-    <com.google.android.material.button.MaterialButton
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/edt_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="open fragment 2"
+        android:textColor="#000"
+        android:layout_marginTop="30dp"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/edt_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textColor="#000"
+        android:textSize="18sp" />
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_open_fragment_two"
-        android:layout_marginTop="80dp"/>
-    <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="open fragment 3"
+        android:layout_marginTop="80dp"
+        android:text="open fragment 2" />
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_open_fragment_three"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="open fragment 3" />
 </LinearLayout>

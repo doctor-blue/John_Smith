@@ -9,25 +9,57 @@
         android:id="@+id/firstFragment"
         android:name="com.example.navigationcomponent.FirstFragment"
         android:label="fragment_first"
-        tools:layout="@layout/fragment_first" >
+        tools:layout="@layout/fragment_first">
         <action
             android:id="@+id/action_firstFragment_to_secondFragment"
             app:destination="@id/secondFragment" />
+
     </fragment>
 
     <fragment
         android:id="@+id/secondFragment"
         android:name="com.example.navigationcomponent.SecondFragment"
         android:label="fragment_second"
-        tools:layout="@layout/fragment_second" >
+        tools:layout="@layout/fragment_second">
+
         <action
             android:id="@+id/action_secondFragment_to_thirdFragment"
             app:destination="@id/thirdFragment" />
+
+        <argument android:name="address"
+            app:argType="string"
+            android:defaultValue="Da Nang"/>
+
+        <argument app:argType="com.example.navigationcomponent.User"
+            android:name="user"
+            />
+
+
     </fragment>
-    
+
     <fragment
         android:id="@+id/thirdFragment"
         android:name="com.example.navigationcomponent.ThirdFragment"
         android:label="fragment_third"
-        tools:layout="@layout/fragment_third" />
+        tools:layout="@layout/fragment_third" >
+
+        <action
+            android:id="@+id/action_thirdFragment_to_deepLinkFragment2"
+            app:destination="@id/deepLinkFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/deepLinkFragment"
+        android:name="com.example.navigationcomponent.DeepLinkFragment"
+        android:label="fragment_deep_link"
+        tools:layout="@layout/fragment_deep_link">
+
+        <argument android:name="myArg"
+            android:defaultValue="Nguyen Van Tan"/>
+
+        <deepLink app:uri="www.unknown.com/{myArg}"/>
+
+    </fragment>
+
 </navigation>

@@ -12,13 +12,19 @@
         android:layout_height="wrap_content"
         android:text="This is second Fragment"
         android:textColor="#000"
-        android:textSize="30sp"/>
+        android:textSize="30sp" />
 
-    <com.google.android.material.button.MaterialButton
+    <TextView
+        android:id="@+id/txt_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="open fragment 3"
-        android:layout_marginTop="80dp"
+        android:textColor="#000"
+        android:textSize="18sp" />
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_open_fragment_three"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="open fragment 3" />
 </LinearLayout>
